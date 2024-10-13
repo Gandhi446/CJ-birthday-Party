@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Answers</title>
+    <script>
+        function getRandomAnswer() {
+            var answers = [" Tequilla ", " Vodka ", " whiskey ", " jagermeister ", " cocktail ", " spicy tamarind ",];
+            var randomIndex = Math.floor(Math.random() * answers.length);
+            document.getElementById("answer").innerHTML = answers[randomIndex];
+        }
+    </script>
+</head>
+<body onload="getRandomAnswer()">
+    <h1 id="answer"></h1>
+</body>
+</html>
