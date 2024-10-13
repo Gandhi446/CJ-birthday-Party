@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Random Answers</title>
+    <title>Random Answers with Images</title>
     <script>
         function getRandomAnswer() {
-            var answers = [" Tequilla ", " Vodka ", " whiskey ", " jagermeister ", " cocktail ", " spicy tamarind ",];
+            // Define answers and their corresponding image URLs
+            var answers = [
+                { text: "Tequilla", image: "Tequilla.jpeg" },
+                { text: "Vodka", image: "Vodka.webp" },
+                { text: "Whiskey", image: "whiskey.jpeg" },
+                { text: "Jagermeister", image: "jagermeister.jpeg" },
+                { text: "Cocktail", image: "cocktail.png" },
+                { text: "Spicy Tamarind", image: "spicy tamarind.webp" }
+            ];
+            
+            // Select a random answer and its corresponding image
             var randomIndex = Math.floor(Math.random() * answers.length);
-            document.getElementById("answer").innerHTML = answers[randomIndex];
+            var selectedAnswer = answers[randomIndex];
+            
+            // Display the answer and image on the page
+            document.getElementById("answer").innerHTML = selectedAnswer.text;
+            document.getElementById("answer-image").src = selectedAnswer.image;
         }
     </script>
 </head>
-<body onload="getRandomAnswer()">
+<body onload="getRandomAnswer()" style="text-align: center;">
     <h1 id="answer"></h1>
+    <img id="answer-image" style="max-width: 300px; margin-top: 20px;">
 </body>
 </html>
