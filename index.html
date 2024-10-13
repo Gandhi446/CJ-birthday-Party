@@ -1,31 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Random Answers with Images</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Drinks Selector</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://cdn.pixabay.com/photo/2017/09/25/13/12/bar-2785455_1280.jpg') no-repeat center center/cover; /* Background image of a bar or drinks theme */
+            background-attachment: fixed; /* Fixed background effect */
+            color: #fff;
+            overflow: hidden; /* To hide overflow on smaller screens */
+        }
+        h1 {
+            font-size: 3em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for text readability */
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Text shadow for a glowing effect */
+        }
+        img {
+            max-width: 300px;
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Larger shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.08); /* Larger zoom on hover */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Bigger shadow on hover */
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.8em;
+            background: rgba(0, 0, 0, 0.4); /* Footer background for better visibility */
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        /* For small screens (mobile responsiveness) */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            img {
+                max-width: 200px;
+            }
+        }
+    </style>
+    
     <script>
         function getRandomAnswer() {
-            // Define answers and their corresponding image URLs
             var answers = [
                 { text: "Tequilla", image: "Tequilla.jpeg" },
                 { text: "Vodka", image: "Vodka.webp" },
-                { text: "whiskey", image: "whiskey.jpeg" },
+                { text: "Whiskey", image: "whiskey.jpeg" },
                 { text: "Jagermeister", image: "jagermeister.jpeg" },
-                { text: "cocktail", image: "cocktail.png" },
-                { text: "spicy tamarind", image: "spicy tamarind.webp" }
+                { text: "Cocktail", image: "cocktail.png" },
+                { text: "Spicy Tamarind", image: "spicy tamarind.webp" }
             ];
             
-            // Select a random answer and its corresponding image
             var randomIndex = Math.floor(Math.random() * answers.length);
             var selectedAnswer = answers[randomIndex];
             
-            // Display the answer and image on the page
             document.getElementById("answer").innerHTML = selectedAnswer.text;
             document.getElementById("answer-image").src = selectedAnswer.image;
         }
     </script>
 </head>
-<body onload="getRandomAnswer()" style="text-align: center;">
+<body onload="getRandomAnswer()">
+
     <h1 id="answer"></h1>
-    <img id="answer-image" style="max-width: 300px; margin-top: 20px;">
+    <img id="answer-image" alt="Random Drink Image">
+
+    <footer>Enjoy responsibly! 🍹</footer>
+
 </body>
 </html>
